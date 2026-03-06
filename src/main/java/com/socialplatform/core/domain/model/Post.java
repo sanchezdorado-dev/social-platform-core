@@ -51,7 +51,7 @@ public class Post extends BaseEntity {
     @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "visibility_type", nullable = false)
-    private PostVisibility visibilityType = PostVisibility.PUBLIC;
+    private PostVisibility postVisibility = PostVisibility.PUBLIC;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false, updatable = false)
@@ -70,7 +70,7 @@ public class Post extends BaseEntity {
     }
 
     public boolean isPublic() {
-        return PostVisibility.PUBLIC.equals(this.visibilityType);
+        return PostVisibility.PUBLIC.equals(this.postVisibility);
     }
 
     public boolean isOwnedBy(UUID userId) {
