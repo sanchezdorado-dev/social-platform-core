@@ -50,7 +50,7 @@ public class Post extends BaseEntity {
     @Setter
     @Builder.Default
     @Enumerated(EnumType.STRING)
-    @Column(name = "visibility_type", nullable = false)
+    @Column(name = "post_visibility", nullable = false)
     private PostVisibility postVisibility = PostVisibility.PUBLIC;
 
     @ManyToOne(fetch = FetchType.LAZY)
